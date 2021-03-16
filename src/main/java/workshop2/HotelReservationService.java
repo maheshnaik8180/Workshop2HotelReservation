@@ -31,8 +31,7 @@ public class HotelReservationService {
     }
 
     public Hotel findCheapestHotel() {
-        hotelList.stream().map(p -> { return p.getRate();}).collect(Collectors.toList());
-        Hotel cheapestRate = hotelList.stream().min(Comparator.comparing(Hotel::getRate)).orElseThrow(NoSuchElementException::new);
+        Hotel cheapestRate = hotelList.stream().min(Comparator.comparing(Hotel::getWeekdayrate)).orElseThrow(NoSuchElementException::new);
     System.out.println(cheapestRate);
     return cheapestRate;
     }
