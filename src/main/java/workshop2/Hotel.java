@@ -1,21 +1,21 @@
 package workshop2;
 
+import java.util.List;
+
 public class Hotel {
 
     private String name;
+    private int rate;
     private int weekdayrate;
     private int weekendrate;
 
 
 
-    public Hotel(String lakewood, int i, int i1) {
-    }
-
     @Override
     public String toString() {
-        return "Hotel [name=" + name + ", weekdayrate=" + weekdayrate + ", weekendrate=" + weekendrate + "]";
+        return "Hotel [name=" + name + ", rate=" + rate + ", weekdayrate=" + weekdayrate + ", weekendrate="
+                + weekendrate + "]";
     }
-
 
     public String getName() {
         return name;
@@ -25,44 +25,40 @@ public class Hotel {
         this.name = name;
     }
 
-    public Object getWeekdayrate() {
+    public int getWeekdayrate() {
         return weekdayrate;
+    }
 
+    public void setWeekdayrate(int weekdayrate) {
+        this.weekdayrate = weekdayrate;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public int getWeekendrate() {
+        return weekendrate;
+    }
 
-        public void setName (String name){
-            this.name = name;
-        }
+    public void setWeekendrate(int weekendrate) {
+        this.weekendrate = weekendrate;
+    }
 
-        public int getWeekdayrate () {
-            return weekdayrate;
+    public Hotel(String name, int rate, int weekdayrate, int weekendrate) {
+        super();
+        this.name = name;
+        this.rate = rate;
+        this.weekdayrate = weekdayrate;
+        this.weekendrate = weekendrate;
+    }
 
-            @Override
-            public String toString () {
-                return "Hotel [name=" + name + ", rate=" + rate + "]";
-            }
+    public int getRate() {
+        return rate;
+    }
 
-            public void setRate ( int rate){
-                this.rate = rate;
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
 
-            }
-
-
-            public int getWeekendrate () {
-                return weekendrate;
-            }
-
-
-
-	public Hotel(String name, int weekdayrate, int weekendrate){
-                super();
-                this.name = name;
-                this.weekdayrate = weekdayrate;
-                this.weekendrate = weekendrate;
-            }
-        }
+    public List<Hotel> getHotels() {
+        List<Hotel> hotel = null;
+        return hotel;
     }
 }
