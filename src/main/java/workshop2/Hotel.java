@@ -6,8 +6,14 @@ public class Hotel {
     private int weekdayrate;
     private int weekendrate;
 
-    public String toString(){
-        return "Hotel [name=" + name + ", weekdayrate=" + weekdayrate +", weekendrate=" + weekendrate + "]";
+
+
+    public Hotel(String lakewood, int i, int i1) {
+    }
+
+    @Override
+    public String toString() {
+        return "Hotel [name=" + name + ", weekdayrate=" + weekdayrate + ", weekendrate=" + weekendrate + "]";
     }
 
 
@@ -15,26 +21,48 @@ public class Hotel {
         return name;
     }
 
-    // Getter And Setter Methods
     public void setName(String name) {
         this.name = name;
     }
 
-    public int getWeekdayrate() {
+    public Object getWeekdayrate() {
         return weekdayrate;
-    }
 
-    public void setWeekdayrate(int weekdayrate) {
-        this.weekdayrate = weekdayrate;
-    }
 
-   public void setWeekendrate(int weekendrate) {
-       this.weekendrate = weekendrate;
-   }
-   public Hotel(String name, int weekdayrate, int weekendrate){
-        super();
-        this.name = name;
-        this.weekdayrate = weekdayrate;
-        this.weekendrate = weekendrate;
+        public String getName() {
+            return name;
+        }
+
+        public void setName (String name){
+            this.name = name;
+        }
+
+        public int getWeekdayrate () {
+            return weekdayrate;
+
+            @Override
+            public String toString () {
+                return "Hotel [name=" + name + ", rate=" + rate + "]";
+            }
+
+            public void setRate ( int rate){
+                this.rate = rate;
+
+            }
+
+
+            public int getWeekendrate () {
+                return weekendrate;
+            }
+
+
+
+	public Hotel(String name, int weekdayrate, int weekendrate){
+                super();
+                this.name = name;
+                this.weekdayrate = weekdayrate;
+                this.weekendrate = weekendrate;
+            }
+        }
     }
 }
