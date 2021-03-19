@@ -1,22 +1,46 @@
 package workshop2;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class HotelReservationTest
-{
+import java.util.ArrayList;
+public class HotelReservationTest {
     static HotelReservationService hotelReservationService;
     @BeforeClass
     public static void initialize() {
         hotelReservationService = new HotelReservationService();
     }
-
-    // testing for cheap hotel
-    @Test
-    public void Test()throws Exception {
-        HotelReservationService hotelReservationService = new HotelReservationService();
-        hotelReservationService.HotelDetails();
-        String cheapHotel = hotelReservationService.CheapestHotel("10Sep2020", "11Sep2020");
-        Assert.assertEquals("Lakewood", cheapHotel);
+    @Before
+    public void shouldPrintWelcomeMessage() {
+        hotelReservationService.printWelcomeMessage();
     }
+
+    @Test
+    public void givenDate_WeekDayshouldReturn_CheapestHotelNameBridgeWood() throws Exception {
+        hotelReservationService.addHotelDetails();
+        ArrayList<String> hotelNameList = hotelReservationService.calculateCheapestHotelAndRate("2020-09-14", "2020-09-16");
+        Object[] hotelName = hotelNameList.toArray();
+        Object[] arrayExpectedOutput = { "LakeWood" };
+        Assert.assertArrayEquals(arrayExpectedOutput, hotelName);
+    }
+
+    @Test
+    public void givenDateWeekend_shouldReturn_CheapestHotelNameBrideWood() throws Exception {
+        hotelReservationService.addHotelDetails();
+        ArrayList<String> hotelNameList = hotelReservationService.calculateCheapestHotelAndRate("2020-09-12", "2020-09-13");
+        Object[] hotelName = hotelNameList.toArray();
+        Object[] arrayExpectedOutput = { "BridgeWood" };
+        Assert.assertArrayEquals(arrayExpectedOutput, hotelName);
+    }
+
+    @Test
+    public void givenDateWeekDayWeekend_shouldReturn_CheapestHotelNameGivesBridgeWood() throws Exception {
+        hotelReservationService.addHotelDetails();
+        ArrayList<String> hotelNameList = hotelReservationService.calculateCheapestHotelAndRate("2020-09-11", "2020-09-12");
+        Object[] hotelName = hotelNameList.toArray();
+        Object[] arrayExpectedOutput = { "BridgeWood" };
+        Assert.assertArrayEquals(arrayExpectedOutput, hotelName);
+    }
+
 }
