@@ -3,7 +3,6 @@ package workshop2;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -25,10 +24,11 @@ public class HotelReservationService {
         return  (int) ChronoUnit.DAYS.between(startDate,endDate);
     }
 
-    public Hotel findCheapestHotel() {
+    public Hotel findCheapestHotel(String date1, String date2) {
 
-        Hotel cheapestRate  =  hotelList.stream().max(Comparator.comparing(Hotel::getRate)).orElseThrow(NoSuchElementException::new);
+        Hotel cheapestRate  =  hotelList.stream().min((a, b) -> a.estimateRate(date1, date2) - b.estimateRate(date1, date2)).orElseThrow(NoSuchElementException::new);
         System.out.println(cheapestRate);
         return cheapestRate;
+
     }
 }

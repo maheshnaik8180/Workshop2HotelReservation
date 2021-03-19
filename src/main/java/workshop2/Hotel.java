@@ -1,5 +1,6 @@
 package workshop2;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Hotel {
@@ -51,6 +52,18 @@ public class Hotel {
 
     public int getRate() {
         return rate;
+    }
+    public int estimateRate(String date1, String date2){
+        LocalDate startdate = LocalDate.parse(date1);
+        LocalDate enddate = LocalDate.parse(date2);
+        int calculatedRate = 0;
+        for(LocalDate currentDate = startdate; (currentDate.isBefore(enddate) || currentDate.equals(enddate)); currentDate = currentDate.plusDays(1)){
+            calculatedRate += weekdayrate;
+
+
+
+        }
+        return calculatedRate;
     }
 
     public void setRate(int rate) {
