@@ -21,6 +21,7 @@ public class HotelReservationService {
     public String CheapestHotel(String Arrival, String Departure) throws Exception {
         Date dateofArrival = convertion(Arrival);
         Date dateofDeparture = convertion(Departure);
+
         long totalPeriodOfStay = 0;
         totalPeriodOfStay = (dateofDeparture.getTime() - dateofArrival.getTime());
         int totalDays = (int) TimeUnit.DAYS.convert(totalPeriodOfStay,TimeUnit.MILLISECONDS);
@@ -29,6 +30,7 @@ public class HotelReservationService {
             int totalRate = hotelList.get(hotel).getRegularRate() * (totalDays+1);
             hotelList.get(hotel).setRegularRate(totalRate);
         }
+
         int regularHotelRate = hotelList.stream().min(Comparator.comparing(Hotel::getRegularRate)).get().getRegularRate();
         String hotelName = hotelList.stream().min(Comparator.comparing(Hotel::getRegularRate)).get().getHotelName();
 
@@ -36,6 +38,7 @@ public class HotelReservationService {
         return hotelName;
 
     }
+
     public Date convertion(String date) throws Exception{
         Date date1 = null;
         try {

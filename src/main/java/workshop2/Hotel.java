@@ -14,5 +14,6 @@ public class Hotel {
 
     public String getHotelName() {
             return null;
+
     }
 }

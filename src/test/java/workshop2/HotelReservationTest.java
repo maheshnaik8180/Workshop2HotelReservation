@@ -19,4 +19,5 @@ public class HotelReservationTest
         String cheapHotel = hotelReservationService.CheapestHotel("10Sep2020", "11Sep2020");
         Assert.assertEquals("Lakewood", cheapHotel);
     }
+
 }
