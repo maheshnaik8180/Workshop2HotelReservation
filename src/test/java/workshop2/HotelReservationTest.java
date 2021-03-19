@@ -21,7 +21,7 @@ public class HotelReservationTest {
         hotelReservationService.addHotelDetails();
         ArrayList<String> hotelNameList = hotelReservationService.calculateCheapestHotelAndRate("2020-09-14", "2020-09-16");
         Object[] hotelName = hotelNameList.toArray();
-        Object[] arrayExpectedOutput = { "LakeWood" };
+        Object[] arrayExpectedOutput = { "RidgeWood" };
         Assert.assertArrayEquals(arrayExpectedOutput, hotelName);
     }
 
@@ -30,7 +30,7 @@ public class HotelReservationTest {
         hotelReservationService.addHotelDetails();
         ArrayList<String> hotelNameList = hotelReservationService.calculateCheapestHotelAndRate("2020-09-12", "2020-09-13");
         Object[] hotelName = hotelNameList.toArray();
-        Object[] arrayExpectedOutput = { "BridgeWood" };
+        Object[] arrayExpectedOutput = { "RidgeWood" };
         Assert.assertArrayEquals(arrayExpectedOutput, hotelName);
     }
 
@@ -39,7 +39,7 @@ public class HotelReservationTest {
         hotelReservationService.addHotelDetails();
         ArrayList<String> hotelNameList = hotelReservationService.calculateCheapestHotelAndRate("2020-09-11", "2020-09-12");
         Object[] hotelName = hotelNameList.toArray();
-        Object[] arrayExpectedOutput = { "BridgeWood" };
+        Object[] arrayExpectedOutput = { "RidgeWood" };
         Assert.assertArrayEquals(arrayExpectedOutput, hotelName);
     }
 
