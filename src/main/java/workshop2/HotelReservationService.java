@@ -16,7 +16,7 @@ public class HotelReservationService {
     int rating;
 
     public void printWelcomeMessage() {
-        System.out.println("Welcome to the Hotel Reservation Program");
+        System.out.println("Welcome to the Hotel Reservation Program...");
     }
 
     public void addHotelDetails() {
@@ -41,6 +41,7 @@ public class HotelReservationService {
     public void findMinimumCostHotel() {
 
     }
+
 
     /* Find cheapest hotel */
     public ArrayList<String> findCheapestCost(long weekDays, long weekendDays) {
@@ -72,6 +73,7 @@ public class HotelReservationService {
         return hotel;
     }
 
+
     // Calculated rate based on period of stay at hotel
     public ArrayList<String> calculateCheapestHotelAndRate(String dateOfArrival, String dateOfDeparture)
             throws Exception {
@@ -85,5 +87,4 @@ public class HotelReservationService {
         weekendDays = totalDays - weekDays;
         return findCheapestCost(weekDays, weekendDays);
     }
-
 }
