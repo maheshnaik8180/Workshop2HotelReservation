@@ -1,6 +1,7 @@
 package workshop2;
 
 public class Hotel {
+    //parameters
     private String hotelName;
     private int hotelRating;
     private int regularRate;
@@ -8,6 +9,7 @@ public class Hotel {
     private int rewardWeekDayRate;
     private int rewardWeekendRate;
     private boolean isRewardee;
+
 
     // Parameterized Constructor
     public Hotel(String hotelName, int hotelRating, int regularRate, int weekendRate, int rewardWeekDayRate,
