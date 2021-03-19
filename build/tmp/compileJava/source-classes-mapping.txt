@@ -1,0 +1,6 @@
+workshop2/welcome.java
+ workshop2.welcome
+workshop2/HotelReservationService.java
+ workshop2.HotelReservationService
+workshop2/Hotel.java
+ workshop2.Hotel

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="workshop2.HotelReservationTest$HotelReservationServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-19T11:58:06" hostname="DESKTOP-O4620L9" time="0.044">
+  <properties/>
+  <testcase name="given3Hotels_whenInvokeFindCheapestHotel_shouldBeAbleToReturnCheapestHotel" classname="workshop2.HotelReservationTest$HotelReservationServiceTest" time="0.044"/>
+  <system-out><![CDATA[
+Total count days : 2
+Hotel [name=Lakewood, rate=3, weekdayrate=110, weekendrate=90]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
