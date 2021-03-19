@@ -4,8 +4,8 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-public class HotelReservationService {
 
+public class HotelReservationService {
     ArrayList<Hotel> hotelList;
     long minCostLakeWood;
     long minCostBridgeWood;
@@ -19,15 +19,16 @@ public class HotelReservationService {
     }
 
     public void printWelcomeMessage() {
-        System.out.println("Welcome to the Hotel Reservation Program...");
+        System.out.println("Welcome to the Hotel Reservation Program");
     }
 
     public void addHotelDetails() {
-        hotelList.add(new Hotel("Lakewood", 3, 110, 90));
-        hotelList.add(new Hotel("Bridgewood", 4, 150, 50));
-        hotelList.add(new Hotel("Ridgewood", 5, 220, 150));
+        hotelList.add(new Hotel("LakeWood", 3, 110, 90));
+        hotelList.add(new Hotel("BridgeWood", 4, 150, 50));
+        hotelList.add(new Hotel("RidgeWood", 5, 220, 150));
     }
 
+    /* count week days */
     private static long countWeekDaysMath(LocalDate arrivalDay, LocalDate departureDay) {
         long count = 0;
         final DayOfWeek startDay = arrivalDay.getDayOfWeek();
@@ -40,8 +41,6 @@ public class HotelReservationService {
         count = daysWithoutWeekends + (startDay == DayOfWeek.SUNDAY ? 1 : 0) + (endDay == DayOfWeek.SUNDAY ? 1 : 0);
         return count;
     }
-
-
 
     /* Find cheapest hotel */
     public ArrayList<String> findCheapestCost(long weekDays, long weekendDays) {
@@ -86,4 +85,5 @@ public class HotelReservationService {
         weekendDays = totalDays - weekDays;
         return findCheapestCost(weekDays, weekendDays);
     }
-}
+    }
+
